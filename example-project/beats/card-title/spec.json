@@ -1,0 +1,13 @@
+{
+  "title": "Tutorial video production",
+  "subtitle": "An example project",
+  "lines": [
+    {"text": "Real captures, timed by the narration", "clip": "title-1"}
+  ],
+  "lead_in": 0.8,
+  "clip_gap": 1.1,
+  "hold": 1.0,
+  "clips": [
+    {"id": "title-1", "audio": "assets/title-1.wav"}
+  ]
+}

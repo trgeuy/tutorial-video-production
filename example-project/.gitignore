@@ -1,0 +1,9 @@
+# Everything below is made from the files in this folder: see README.md, "Build the example".
+personal.txt
+voice/v1/
+beats/*/assets/
+beats/*/index.html
+beats/*/frames.json
+beats/*.mp4
+drafts/
+.venv/

@@ -1,0 +1,16 @@
+# Fixes for make_srt.py: <regex> TAB <replacement>, applied in order. Lines starting with # are comments.
+# A few of ours, as examples of the kinds of fix you will need. Start your own list from your first transcript.
+# A product name whisper splits or mis-cases:
+\bClaude code\b	Claude Code
+(?i)\bFuji ?Net\b	FujiNet
+# An abbreviation it writes without its punctuation:
+\bCPM\b	CP/M
+\b[Mm]ac OS\b	macOS
+# A file name it spells out or lower-cases:
+\bClaude\.md\b	CLAUDE.md
+\bnew\.mcp\.json\b	new .mcp.json
+# A key name:
+\b[Cc]ontrol ([CE])\b	Control-\1
+\bShift tab\b	Shift-Tab
+# A number your script writes as a digit:
+\bpart one\b	part 1

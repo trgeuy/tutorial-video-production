@@ -1,0 +1,27 @@
+{
+  "frames": "frames.json",
+  "title": "demo — -zsh — 120×30",
+  "subs": {},
+  "lead_in": 0.8,
+  "clip_gap": 1.1,
+  "min_gap": 0.3,
+  "tail": 2.0,
+  "clips": [
+    {"id": "term-1", "audio": "assets/term-1.wav", "words": "assets/term-1.words.json"},
+    {"id": "term-2", "audio": "assets/term-2.wav", "words": "assets/term-2.words.json"},
+    {"id": "term-3", "audio": "assets/term-3.wav", "words": "assets/term-3.words.json"}
+  ],
+  "segments": [
+    {"from": 1.4, "to": 6.3, "speed": 1.5, "cue": {"clip": "term-1", "phrase": "short command"}},
+    {"from": 7.3, "to": 17.9, "speed": 3, "cue": {"clip": "term-2", "phrase": "slow job"}},
+    {"from": 17.9, "to": 26.2, "speed": 4, "after_prev": 0.3},
+    {"from": 28.2, "to": 34.0, "speed": 2, "cue": {"clip": "term-3", "phrase": "the green line"}}
+  ],
+  "captions": [
+    {"text": "The wait plays 4 times faster", "cue": {"clip": "term-2", "phrase": "speed up the wait", "offset": 1.0}, "dur": 2.5}
+  ],
+  "callouts": [
+    {"row": 13, "text": "All checks passed", "cue": {"clip": "term-3", "phrase": "checks passed", "anchor": "end", "offset": 0.3}, "dur": 3.0}
+  ],
+  "expect": ["Hello from a real recording", "Done.", "All checks passed"]
+}

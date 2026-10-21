@@ -1,0 +1,9 @@
+# Copy this file to personal.txt and list every personal name of every computer you capture on:
+# user names, host names, home folders, e-mail addresses. One per line. screenkit and duokit stop
+# the build if one shows on screen after the spec's "subs". personal.txt is in .gitignore: never
+# publish it. A line "re:<regex>" matches a name that is also part of a longer word.
+jo@Jos-MacBook
+Jos-MacBook
+/Users/jo
+jo.example@example.com
+re:\bjo@

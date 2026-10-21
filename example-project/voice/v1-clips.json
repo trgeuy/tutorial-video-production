@@ -1,0 +1,12 @@
+{
+  "engine": "say",
+  "say_voice": "Reed",
+  "say_rate": 175,
+  "out_dir": "v1",
+  "clips": [
+    {"id": "title-1", "text": "This example video shows the whole method on two short beats."},
+    {"id": "term-1", "text": "First we run a short command, and it prints one line of text."},
+    {"id": "term-2", "text": "Next, a slow job runs for eight seconds. We speed up the wait, so you never watch the screen for nothing."},
+    {"id": "term-3", "text": "At the end, the green line tells us that all checks passed."}
+  ]
+}
