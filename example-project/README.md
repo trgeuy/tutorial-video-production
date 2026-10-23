@@ -3,6 +3,7 @@
 A small video project set up the way we work: a `CLAUDE.md` with start-up and close-out
 checklists, a handoff file, a narration script, one real terminal recording and two beats. Build
 it once by hand (below) to see every step work. Then copy the folder to start your own video.
+Work in your workspace (repo README, "Getting started"), not in the clone.
 
 | Path | What |
 |---|---|
@@ -20,7 +21,7 @@ it once by hand (below) to see every step work. Then copy the folder to start yo
 ## Build the example
 
 You need ffmpeg, Python 3, Node.js (for `npx`) and macOS (for `say`): see "Requirements" in the
-repo README. Run every command from this folder. The tools and kits are in the repo, one folder up.
+repo README. Run every command from this folder. The tools and kits are one folder up.
 
 1. **Your personal names.** `cp personal.example.txt personal.txt`, then put your own names in
    it. screenkit stops the build if one shows on screen.
@@ -60,9 +61,10 @@ Everything these steps make is in `.gitignore`: the sources are the only files t
 
 ## Start your own video
 
-1. **Copy this folder next to it**, in your clone of the repo, so `../tools` and `../kits` keep
-   working: from the repo folder, `cp -R example-project my-video`. (Anywhere else: change those
-   paths in the commands and in `CLAUDE.md`.)
+1. **Copy this folder in your workspace:** from the workspace folder,
+   `cp -R example-project my-video`. The new folder must be next to `tools/` and `kits/`, so that
+   `../tools` and `../kits` work. (Anywhere else: change those paths in the commands and in
+   `CLAUDE.md`.)
 2. **Clear out the example:** in `my-video/`, delete the example's beats, recording, voice clips,
    drafts and script, and the sample entries of both `WHERE-WE-LEFT-OFF` files:
    ```
@@ -70,12 +72,12 @@ Everything these steps make is in `.gitignore`: the sources are the only files t
    rm -rf beats captures voice drafts scripts/video1.md && mkdir beats captures voice
    sed -i '' '/^## /,$d' WHERE-WE-LEFT-OFF.md WHERE-WE-LEFT-OFF-ARCHIVE.md
    ```
-   `drafts/` is not in a fresh clone; `rm -rf` does not mind. The `sed` keeps each file's heading
-   and deletes everything from the first `##` entry down. Keep `CLAUDE.md`, `.gitignore`,
-   `personal.example.txt` and `youtube/README.md`.
+   `drafts/` is there only after the example build; `rm -rf` does not mind. The `sed` keeps each
+   file's heading and deletes everything from the first `##` entry down. Keep `CLAUDE.md`,
+   `.gitignore`, `personal.example.txt` and `youtube/README.md`.
 3. **Your personal names and the replay library.** These are steps 1 and 2 of "Build the
-   example", done again in `my-video/`. A fresh clone has neither file, because the repo does not
-   track them:
+   example", done again in `my-video/`. Without the example build, neither is there, because the
+   repo does not track them:
    - `cp personal.example.txt personal.txt`, then put your own names in it. If `personal.txt` is
      already there from the example build, keep it.
    - `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install --disable-pip-version-check -r ../tools/requirements.txt`.

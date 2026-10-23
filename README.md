@@ -8,11 +8,25 @@ computer simulator, but the method is not. Use it for any software training vide
 
 ## Getting started
 
-1. Clone this repo. Any folder works. GitHub Desktop uses `~/Documents/GitHub/` by default.
-2. **Build the example once.** Follow "Build the example" in
+1. **Clone this repo.** Any folder works. GitHub Desktop uses `~/Documents/GitHub/` by default.
+   Do not work in the clone: keep it as it is, so that you can reset it or clone again to get our
+   updates.
+2. **Make your workspace:** a folder outside the clone for your videos and your own copy of the
+   tools. From the clone:
+   ```
+   mkdir -p ~/Videos
+   cp -R tools kits skills example-project WORKFLOW.md TOOLS.md ~/Videos/
+   ```
+   Any name works for the workspace. Each video gets its own folder in it, next to `tools/` and
+   `kits/`, so that the paths `../tools` and `../kits` work as they do in the repo. Change our
+   tools and add your own here: a reset of the clone does not touch them. To take our updates
+   later, compare the clone with your workspace (`diff -r`) and copy what you want. `git init` in
+   the workspace keeps a history of your own changes. (If you know git well, a fork of this repo
+   also works. Keep your videos outside it.)
+3. **Build the example once,** in the workspace. Follow "Build the example" in
    [`example-project/README.md`](example-project/README.md). In 11 steps you go from a real
    terminal recording and a script to a 26-second draft video, and see every tool and check work.
-3. **Start your own video** from a copy of the example project: "Start your own video" in the same
+4. **Start your own video** from a copy of the example project: "Start your own video" in the same
    README. Then open Claude Code in your folder and say "start up": it reads `CLAUDE.md` and runs
    the start-up checklist. Say "close out" at the end of a session.
 
