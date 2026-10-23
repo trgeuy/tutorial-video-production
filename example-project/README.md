@@ -65,13 +65,20 @@ Everything these steps make is in `.gitignore`: the sources are the only files t
    paths in the commands and in `CLAUDE.md`.)
 2. **Clear out the example:** in `my-video/`, delete everything in `beats/`, `captures/`,
    `drafts/` and `voice/`, and `scripts/video1.md`. Empty both `WHERE-WE-LEFT-OFF` files down to
-   their headings. Keep `CLAUDE.md`, `.gitignore`, `personal.txt` and `youtube/README.md`.
-3. **Install the skills:** `mkdir -p .claude/skills && cp -R ../skills/video-* .claude/skills/`.
+   their headings. Keep `CLAUDE.md`, `.gitignore`, `personal.example.txt` and `youtube/README.md`.
+3. **Your personal names and the replay library.** These are steps 1 and 2 of "Build the
+   example", done again in `my-video/`. A fresh clone has neither file, because the repo does not
+   track them:
+   - `cp personal.example.txt personal.txt`, then put your own names in it. If `personal.txt` is
+     already there from the example build, keep it.
+   - `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install -r ../tools/requirements.txt`.
+     The `rm` removes a venv that `cp -R` copied from the example. Make a new one in each folder.
+4. **Install the skills:** `mkdir -p .claude/skills && cp -R ../skills/video-* .claude/skills/`.
    Check the "Your project" table at the top of each `SKILL.md`; its values already match this
    folder layout. The skills name our tools as one way to do a step: replace any with yours.
-4. **Copy a beat to start each new beat:** a beat needs `hyperframes.json`, `meta.json` and
+5. **Copy a beat to start each new beat:** a beat needs `hyperframes.json`, `meta.json` and
    `package.json` next to its `spec.json`, or it builds but never renders. Copy them from
    `../example-project/beats/card-title/`, and change the name in `meta.json` and `package.json`.
-5. **Open Claude Code in `my-video/` and say "start up".** It reads `CLAUDE.md` and runs the
+6. **Open Claude Code in `my-video/` and say "start up".** It reads `CLAUDE.md` and runs the
    start-up checklist. Tell it which video and step to work on. Say "close out" when you stop: it
    runs the close-out checklist and writes the handoff entry for next time.
