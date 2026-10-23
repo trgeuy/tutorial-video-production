@@ -66,14 +66,17 @@ Everything these steps make is in `.gitignore`: the sources are the only files t
    `../tools` and `../kits` work. (Anywhere else: change those paths in the commands and in
    `CLAUDE.md`.)
 2. **Clear out the example:** in `my-video/`, delete the example's beats, recording, voice clips,
-   drafts and script, and the sample entries of both `WHERE-WE-LEFT-OFF` files:
+   drafts and script, and the sample entries of both `WHERE-WE-LEFT-OFF` files, and replace this
+   README:
    ```
    cd my-video
    rm -rf beats captures voice drafts scripts/video1.md && mkdir beats captures voice
    sed -i '' '/^## /,$d' WHERE-WE-LEFT-OFF.md WHERE-WE-LEFT-OFF-ARCHIVE.md
+   echo '# My video' > README.md
    ```
    `drafts/` is there only after the example build; `rm -rf` does not mind. The `sed` keeps each
-   file's heading and deletes everything from the first `##` entry down. Keep `CLAUDE.md`,
+   file's heading and deletes everything from the first `##` entry down. The new `README.md` is a
+   heading only, so that nothing in the folder still describes the example. Keep `CLAUDE.md`,
    `.gitignore`, `personal.example.txt` and `youtube/README.md`.
 3. **Your personal names and the replay library.** These are steps 1 and 2 of "Build the
    example", done again in `my-video/`. Without the example build, neither is there, because the

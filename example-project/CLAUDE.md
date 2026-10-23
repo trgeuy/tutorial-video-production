@@ -13,7 +13,8 @@ The reasons are in `../WORKFLOW.md`, "The rules we set first".
 1. Every character on screen comes from a real capture. Never type a terminal screen by hand.
 2. No personal data in any frame. `personal.txt` lists the names; the build stops if one shows.
    Never publish `personal.txt`.
-3. Capture on a clean computer or account.
+3. Capture on a clean computer or a fresh account; one is enough. A clean second computer needs
+   no new account: `personal.txt` and the `subs` handle its names.
 4. The viewer never waits for nothing: no beat plays on more than about 2 s past its narration.
 5. Judge sound by ear and pictures by eye: extract frames and look at them before you call a
    visual change done.

@@ -83,7 +83,8 @@ that renders. A beat without them builds but never renders.
   about. A page that shows a relative date ("yesterday") ages: capture it again on publish day.
 - **Pages that need a sign-in:** real window screenshots. Paint over the personal spot only, with
   the page's own background colour, and draw the placeholder in the page's font at the same width.
-- **Clean computer:** capture on a fresh account or a second computer. Do only read-only checks
+- **Clean computer:** capture on a fresh account or a second computer, not both: a clean second
+  computer needs no new account (`personal.txt` and `subs` handle its names). Do only read-only checks
   over SSH there. On a clean Mac, the first `python3`, `git` or `cc` opens an "install developer
   tools" dialog on that computer's screen, which changes what a new user sees.
 - Screenshot file names on macOS have a narrow no-break space before AM/PM. Copy them with a

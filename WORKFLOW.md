@@ -11,8 +11,10 @@ the details for each step.
 2. **Use a placeholder identity.** Real user names, host names and e-mail addresses never reach a
    frame. Replace them with placeholders (for example `user@Macbook`), and make the build fail
    if a real name is still on screen.
-3. **Capture on a clean computer.** A fresh account or a second computer shows what a new user
-   sees: no aliases, no installed tools, no history.
+3. **Capture on a clean computer.** A second computer or a fresh account shows what a new user
+   sees: no aliases, no installed tools, no history. One of the two is enough: on a clean second
+   computer, use its own account. Its user and host names are not a reason for a new account:
+   `personal.txt` and the beat's `subs` replace them (rule 2).
 4. **The viewer must never wait for nothing.** No section plays more than about 2 seconds past its
    narration. Speed up waits (installs, builds, an AI that is thinking) and say so aloud.
 5. **Judge sound by ear and pictures by eye.** A meter or a transcript does not tell you if a

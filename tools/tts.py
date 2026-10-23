@@ -18,7 +18,8 @@ the system voice) and "say_rate" (words per minute). Iterate wording and timing 
 "engine": "elevenlabs": needs "voice_id"; optional "model_id" (default MODEL), "seed" (same seed +
 same text = repeatable take) and "voice_settings", sent as-is (e.g. {"stability": 0.5,
 "similarity_boost": 0.75, "style": 0.0, "use_speaker_boost": true, "speed": 0.9}). Send the voice's
-full stored set, not only the changed key. The .mp3 stays as the API sent it. Only changed clips are
+full stored set, not only the changed key. The .mp3 stays as the API sent it (a paid take); the free
+.aiff from say is deleted once the .wav is made. Only changed clips are
 sent, so an edit to one paragraph costs only that paragraph's characters. The API key comes from
 the ELEVENLABS_API_KEY environment variable, else ~/.config/elevenlabs/api_key; it is never printed.
 """
@@ -96,6 +97,7 @@ for clip in spec["clips"]:
            f":measured_LRA={m['input_lra']}:measured_thresh={m['input_thresh']}")
     subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", src, "-af", ln, "-ar", "48000", "-ac", "2",
                     base + ".wav"], check=True)
+    if ENGINE == "say": os.remove(src)  # free to make again; the .wav is the clip
     open(base + ".sha", "w").write(digest)
     if ENGINE != "say": spent += len(clip["text"])
     print(f"{clip['id']}: generated ({ENGINE}), {len(clip['text'])} characters")
