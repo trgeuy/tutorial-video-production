@@ -1,5 +1,7 @@
-# Everything below is made from the files in this folder: see README.md, "Build the example".
+# Files that the tools make from the sources in this folder, and personal.txt (never publish it).
+# The recordings in captures/ and voice/rec/ are sources: keep them.
 personal.txt
+# Placeholder clips of video 1. Add a line for each new video.
 voice/v1/
 beats/*/assets/
 beats/*/index.html

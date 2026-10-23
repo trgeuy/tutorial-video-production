@@ -19,12 +19,12 @@ it once by hand (below) to see every step work. Then copy the folder to start yo
 
 ## Build the example
 
-You need ffmpeg, Python 3, Node.js (for `npx`) and macOS (for `say`). Run every command from
-this folder. The tools and kits are in the repo, one folder up.
+You need ffmpeg, Python 3, Node.js (for `npx`) and macOS (for `say`): see "Requirements" in the
+repo README. Run every command from this folder. The tools and kits are in the repo, one folder up.
 
 1. **Your personal names.** `cp personal.example.txt personal.txt`, then put your own names in
    it. screenkit stops the build if one shows on screen.
-2. **The replay library.** `python3 -m venv .venv && .venv/bin/pip install -r ../tools/requirements.txt`
+2. **The replay library.** `python3 -m venv .venv && .venv/bin/pip install --disable-pip-version-check -r ../tools/requirements.txt`
 3. **Placeholder narration.** `python3 ../tools/tts.py voice/v1-clips.json` makes `voice/v1/<id>.wav`.
 4. **Word times.** For each clip, from a beat folder (HyperFrames needs its project files):
    ```
@@ -63,15 +63,22 @@ Everything these steps make is in `.gitignore`: the sources are the only files t
 1. **Copy this folder next to it**, in your clone of the repo, so `../tools` and `../kits` keep
    working: from the repo folder, `cp -R example-project my-video`. (Anywhere else: change those
    paths in the commands and in `CLAUDE.md`.)
-2. **Clear out the example:** in `my-video/`, delete everything in `beats/`, `captures/`,
-   `drafts/` and `voice/`, and `scripts/video1.md`. Empty both `WHERE-WE-LEFT-OFF` files down to
-   their headings. Keep `CLAUDE.md`, `.gitignore`, `personal.example.txt` and `youtube/README.md`.
+2. **Clear out the example:** in `my-video/`, delete the example's beats, recording, voice clips,
+   drafts and script, and the sample entries of both `WHERE-WE-LEFT-OFF` files:
+   ```
+   cd my-video
+   rm -rf beats captures voice drafts scripts/video1.md && mkdir beats captures voice
+   sed -i '' '/^## /,$d' WHERE-WE-LEFT-OFF.md WHERE-WE-LEFT-OFF-ARCHIVE.md
+   ```
+   `drafts/` is not in a fresh clone; `rm -rf` does not mind. The `sed` keeps each file's heading
+   and deletes everything from the first `##` entry down. Keep `CLAUDE.md`, `.gitignore`,
+   `personal.example.txt` and `youtube/README.md`.
 3. **Your personal names and the replay library.** These are steps 1 and 2 of "Build the
    example", done again in `my-video/`. A fresh clone has neither file, because the repo does not
    track them:
    - `cp personal.example.txt personal.txt`, then put your own names in it. If `personal.txt` is
      already there from the example build, keep it.
-   - `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install -r ../tools/requirements.txt`.
+   - `rm -rf .venv && python3 -m venv .venv && .venv/bin/pip install --disable-pip-version-check -r ../tools/requirements.txt`.
      The `rm` removes a venv that `cp -R` copied from the example. Make a new one in each folder.
 4. **Install the skills:** `mkdir -p .claude/skills && cp -R ../skills/video-* .claude/skills/`.
    Check the "Your project" table at the top of each `SKILL.md`; its values already match this

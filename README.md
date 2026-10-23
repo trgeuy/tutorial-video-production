@@ -8,7 +8,7 @@ computer simulator, but the method is not. Use it for any software training vide
 
 ## Getting started
 
-1. Clone this repo.
+1. Clone this repo. Any folder works. GitHub Desktop uses `~/Documents/GitHub/` by default.
 2. **Build the example once.** Follow "Build the example" in
    [`example-project/README.md`](example-project/README.md). In 11 steps you go from a real
    terminal recording and a script to a 26-second draft video, and see every tool and check work.
@@ -49,6 +49,15 @@ Commands and prompts from each part: [altairsim-video-files](https://github.com/
 
 We made everything on macOS. Some steps use macOS programs (`say`, `script -r`, Terminal.app).
 `TOOLS.md` names each one, so you can find the equivalent on Windows or Linux.
+
+You need ffmpeg, Node.js (for `npx`) and Python 3. With [Homebrew](https://brew.sh):
+
+```
+brew install ffmpeg node
+```
+
+Python 3 comes with the Xcode Command Line Tools (`xcode-select --install`). We tested the setup
+on the Python 3.9 that macOS ships: the replay library installs on it.
 
 ## License
 
