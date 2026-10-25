@@ -4,7 +4,7 @@
 
 | Tool | What we use it for | Notes |
 |---|---|---|
-| [HyperFrames](https://github.com/heygen-com/hyperframes) (`npx hyperframes`) | Renders a beat's HTML page to MP4. Its `transcribe --engine whisper` command gives the time of every word. | [npm package](https://www.npmjs.com/package/hyperframes), Apache-2.0. We pinned version 0.8.77 for the whole series; check the current one before you start. |
+| [HyperFrames](https://github.com/heygen-com/hyperframes) (`npx hyperframes`) | Renders a beat's HTML page to MP4. Its `transcribe --engine whisper` command gives the time of every word. | [npm package](https://www.npmjs.com/package/hyperframes), Apache-2.0. We pinned version 0.8.77 for the whole series; check the current one before you start, then keep that pin to the end of the video. No install step: `npx` downloads the pinned version (and HyperFrames its headless Chrome) the first time a command runs. Set `HYPERFRAMES_NO_UPDATE_CHECK=1` (no "Bump it" line), `HYPERFRAMES_NO_TELEMETRY=1` (no anonymous usage data) and `HYPERFRAMES_SKIP_SKILLS=1` (no skill install) for every command. `npx hyperframes@<pin> doctor` checks Node, ffmpeg, Chrome and whisper; its Version, Docker, TTS and BGM lines are not needed. HyperFrames' own skills are not needed; they assume a different workflow (they bump the pin, add stock media, send feedback). |
 | [ffmpeg / ffprobe](https://ffmpeg.org/) | Trim, level, join, master, silence and freeze detection, frame grabs. | Every step uses it. |
 | [Python 3](https://www.python.org/) | All our build and audio scripts. | |
 | [pyte](https://github.com/selectel/pyte) | Replays a terminal recording into screen frames (a terminal emulator in Python). | Has no alternate screen and no faint text: work around both. We used 0.8.2. |

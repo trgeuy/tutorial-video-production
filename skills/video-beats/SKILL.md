@@ -45,10 +45,21 @@ A beat plays narration clips, and every action on screen waits for a **cue phras
 ## Build, render, check
 
 1. Build the beat: run its kit from the beat's folder.
-2. Render it in the background. A render takes from seconds to minutes.
-3. Grab frames: `ffmpeg -ss <t> -i <beat>.mp4 -frames:v 1 x.png`, then look at the PNG.
+2. Check it: `npx --yes hyperframes@<pin> check` finds HTML, runtime and layout errors before a
+   render. For a quick look at a few frames without a render:
+   `npx --yes hyperframes@<pin> snapshot --at 3.0,10.5 --no-end -o <dir> .` (seconds).
+3. Render it in the background. A render takes from seconds to minutes. While you change a beat
+   again and again, `--quality draft` renders faster and smaller; render the final at the default.
+4. Grab frames from the MP4: `ffmpeg -ss <t> -i <beat>.mp4 -frames:v 1 x.png`, then look at the PNG.
    For several frames, scale each to 960 px and join them in a grid with ffmpeg `xstack`.
-4. Back up a beat folder and its MP4 before you overwrite them.
+   Snapshots do not replace this step: rule 4 is about the rendered video.
+5. Back up a beat folder and its MP4 before you overwrite them.
+
+**Keep the HyperFrames pin** to the end of the video: a new version can change a render. Do not run
+`hyperframes upgrade`. Set these for every HyperFrames command:
+`HYPERFRAMES_NO_UPDATE_CHECK=1 HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_SKIP_SKILLS=1`.
+HyperFrames' own skills are not needed; they assume a different workflow (they bump the pin, add
+stock media, send feedback).
 
 A renderer project often needs its own project files next to `index.html`. Copy them from a beat
 that renders. A beat without them builds but never renders.
