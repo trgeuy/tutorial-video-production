@@ -6,6 +6,9 @@ AI sessions, web pages, title cards and a recorded voice-over, joined into one v
 We made an 8-part YouTube series this way (see "Our series" below). The series is about a
 computer simulator, but the method is not. Use it for any software training video.
 
+To see the whole process from start to finish, watch [How we make our videos with Claude Code](https://youtu.be/vCdMLJEkl1o)
+(7 minutes). It goes from a clean computer to a finished video, using this repo.
+
 ## Getting started
 
 1. **Clone this repo.** Any folder works. GitHub Desktop uses `~/Documents/GitHub/` by default.
