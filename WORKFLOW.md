@@ -67,6 +67,7 @@ words; whisper mis-hears product names.
 
 Join the beats into a draft and watch it. Expect notes: long pauses, a screenshot that is
 missing when the voice talks about it, a stray key. Fix and build the next draft.
+[`WORKING-WITH-CLAUDE.md`](WORKING-WITH-CLAUDE.md) has our tips for giving notes to Claude.
 
 ### 6. Record the real narration
 

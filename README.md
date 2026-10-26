@@ -38,6 +38,7 @@ computer simulator, but the method is not. Use it for any software training vide
 |---|---|
 | [`example-project/`](example-project/) | A small video project to build once and then copy: a `CLAUDE.md` with start-up and close-out checklists, the handoff files, a script, a real recording and two beats. |
 | [`WORKFLOW.md`](WORKFLOW.md) | The whole process, from the first script to the upload, and why each step is there. |
+| [`WORKING-WITH-CLAUDE.md`](WORKING-WITH-CLAUDE.md) | Our tips for working with Claude: drafts, notes, rewording the narration, checks. Question them. |
 | [`TOOLS.md`](TOOLS.md) | The third-party tools we use, and our tools and kits in this repo. |
 | [`skills/`](skills/) | Three Claude Code skills, made general: narration, picture (beats), publish. They tell Claude how to do each step and which mistakes to avoid. |
 | [`tools/`](tools/) | Sixteen of our tools: narration, captions, mastering, joining beats, and capturing, editing and replaying terminal sessions and web pages. |
