@@ -23,6 +23,14 @@ Work in your workspace (repo README, "Getting started"), not in the clone.
 You need ffmpeg, Python 3, Node.js (for `npx`) and macOS (for `say`): see "Requirements" in the
 repo README. Run every command from this folder. The tools and kits are one folder up.
 
+First, in the same terminal, set three variables for HyperFrames:
+```
+export HYPERFRAMES_NO_UPDATE_CHECK=1 HYPERFRAMES_NO_TELEMETRY=1 HYPERFRAMES_SKIP_SKILLS=1
+```
+Without them, HyperFrames tells you to upgrade past the pinned version ("Bump it"). Do not: keep
+the pin to the end of the video. `TOOLS.md` tells what each variable does. Set them again in each
+new terminal.
+
 1. **Your personal names.** `cp personal.example.txt personal.txt`, then put your own names in
    it. screenkit stops the build if one shows on screen.
 2. **The replay library.** `python3 -m venv .venv && .venv/bin/pip install --disable-pip-version-check -r ../tools/requirements.txt`
